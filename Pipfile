@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+
+[packages]
+osmnx = "*"
+pandas = "*"
+networkx = "*"
+shapely = "*"
+geopandas = "*"
+tqdm = "*"
+ortools = "*"
+folium = "*"
+scikit-learn = "*"
+
+[requires]
+python_version = "3.8"
