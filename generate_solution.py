@@ -16,6 +16,7 @@ SOLUTION_LOCATION = "data/solution.pkl"
 KITCHEN_DATA_LOCATION = "data/kitchens-locations.csv"
 TIME_GRAPH_LOCATION = "data/time.pkl"
 
+
 def get_kitchen_data(location):
     kitchetns = pd.read_csv(location)
     kitchetns = kitchetns.fillna(0)
@@ -144,7 +145,6 @@ def save_data(solution, solution_location):
 def main():
     data = load_data(KITCHEN_DATA_LOCATION, TIME_GRAPH_LOCATION)
     routing, solution, manager = solve(data)
-    print_solution(data, manager, routing, solution)
     solution = extract_solution(routing, solution, manager)
     save_data(solution, SOLUTION_LOCATION)
 
