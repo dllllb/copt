@@ -33,9 +33,10 @@ def get_graph(all_points: gpd.GeoDataFrame) -> nx.MultiDiGraph:
 
 
 def get_distances_and_time(all_points: gpd.GeoDataFrame, graph: nx.MultiDiGraph):
-    location_times = {}
+    location_times = []
     location_paths = {}
     for i in tqdm(range(len(all_points))):
+        location_times.append([])
         for j in range(len(all_points)):
             origin = all_points.iloc[i]
             destination = all_points.iloc[j]
@@ -43,7 +44,7 @@ def get_distances_and_time(all_points: gpd.GeoDataFrame, graph: nx.MultiDiGraph)
             closest_target_node = ox.distance.nearest_nodes(graph, destination.geometry.x, destination.geometry.y)
             path = ox.shortest_path(graph, closest_origin_node, closest_target_node, weight="travel_time")
             location_paths[(i, j)] = path
-            location_times[(i, j)] = int(sum(ox.utils_graph.get_route_edge_attributes(graph, path, "travel_time")))
+            location_times[i].append(int(sum(ox.utils_graph.get_route_edge_attributes(graph, path, "travel_time"))))
     return location_times, location_paths
 
 
