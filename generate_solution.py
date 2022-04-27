@@ -32,9 +32,17 @@ def get_seconds(data):
         return (int(data[0]) - 21) * 60 * 60 + int(data[1])*60
 
 
+def generate_time_graph(travel_times, depot_id):
+    for i in range(len(travel_times)):
+        for j in range(len(travel_times[0])):
+            if i != j and i != depot_id:
+                travel_times[i][j] += 15 * 60
+    return travel_times
+
+
 def collect_data(travel_times, delivery_windows, demands, depot_id, vehicle_counts):
     data = {}
-    data['distance_matrix'] = [elem[:COUNT] for elem in travel_times[:COUNT]]
+    data['distance_matrix'] = generate_time_graph([elem[:COUNT] for elem in travel_times[:COUNT]], depot_id)
     data['num_vehicles'] = vehicle_counts
     data['demands'] = list(demands.astype(int))
     data['vehicle_capacities'] = [VEHICLE_CAPACITY] * vehicle_counts
