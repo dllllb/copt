@@ -2,7 +2,7 @@ RL-assisted combinatorial optimization
 
 ## Kitchen scenario
 
-ORTools solution:
+**ORTools** solution:
 ```sh
 pipenv install
 pipenv shell
