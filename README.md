@@ -4,6 +4,7 @@ RL-assisted combinatorial optimization
 
 ORTools solution:
 ```sh
+pipenv install
 pipenv shell
 
 python generate_graph.py
