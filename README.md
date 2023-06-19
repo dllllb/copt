@@ -1,4 +1,4 @@
-A small demo of the `ORTools`-based vehilce routing problem solution. Distance matrix is calculated using the road graph, loaded from the OpenStreetMap using `OSMnx`.
+A small demo of the `ORTools`-based vehicle routing problem solution. Distance matrix is calculated using the road graph, loaded from the OpenStreetMap using `OSMnx`.
 
 Execution steps:
 ```sh
