@@ -1,8 +1,6 @@
-RL-assisted combinatorial optimization
+A small demo of the `ORTools`-based vehilce routing problem solution. Distance matrix is calculated using the road graph, loaded from the OpenStreetMap using `OSMnx`.
 
-## Kitchen scenario
-
-**ORTools** solution:
+Execution steps:
 ```sh
 pipenv install
 pipenv shell
