@@ -89,7 +89,7 @@ def main():
     all_routes = load_pickle_object(PATHS_FILE_LOCATION)
     solution = load_pickle_object(SOLUTION_LOCATION)
     time_graph = load_pickle_object(TIME_GRAPH_LOCATION)
-    kitchens = pd.read_csv(KITCHEN_INFO)
+    kitchens = pd.read_csv(KITCHEN_INFO, sep=';')
     route_map = plot_solutions(graph, all_routes, solution, kitchens, time_graph)
     route_map.save("data/routes.html")
 

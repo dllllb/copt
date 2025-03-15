@@ -2,10 +2,7 @@ A small demo of the `ORTools`-based vehicle routing problem solution. Distance m
 
 Execution steps:
 ```sh
-pipenv install
-pipenv shell
-
-python generate_graph.py
-python generate_solution.py
-python plot_solution.py
+uv run generate_graph.py
+uv run generate_solution.py
+uv run plot_solution.py
 ```

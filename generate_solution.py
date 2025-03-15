@@ -57,7 +57,7 @@ def load_time_graph(graph_location: str):
     return graph
 
 def load_data(kitchen_data_locations, time_data_locat):
-    kitchens = pd.read_csv(kitchen_data_locations).dropna()
+    kitchens = pd.read_csv(kitchen_data_locations, sep=';').dropna()
     kitchens = kitchens[kitchens.requirements != 0.0]
     kitchens.time = kitchens.time.astype(str).apply(get_seconds)
     delivery_windows = [(0, elem) for elem in kitchens.time]

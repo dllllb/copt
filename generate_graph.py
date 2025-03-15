@@ -9,7 +9,7 @@ import pickle as pkl
 
 
 def get_data(data_file_location: str) -> pd.DataFrame:
-    data = pd.read_csv(data_file_location)
+    data = pd.read_csv(data_file_location, sep=';')
     data.longitude = data.longitude.str.replace(',', '.').astype(float)
     data.latitude = data.latitude.str.replace(',', '.').astype(float)
     return data[['longitude', 'latitude']]
